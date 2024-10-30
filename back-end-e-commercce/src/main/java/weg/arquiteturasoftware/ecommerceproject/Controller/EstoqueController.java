@@ -25,6 +25,11 @@ public class EstoqueController {
         return estoqueService.buscarEstoque(id);
     }
 
+    @DeleteMapping("/deletar/{id}")
+    public void deletarEstoque(@PathVariable int id) {
+        this.estoqueService.deletarEstoque(buscarEstoques(id));
+    }
+
     @GetMapping("/listar-todos")
     public List<Estoque> listarTodosEstoques() {
         return estoqueService.buscarTodosEstoques();

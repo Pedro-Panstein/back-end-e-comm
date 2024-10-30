@@ -24,6 +24,10 @@ public class EstoqueService {
         return estoqueRepository.findById(id).orElse(null);
     }
 
+    public void deletarEstoque(Estoque estoque) {
+        this.estoqueRepository.delete(estoque);
+    }
+
     public List<Estoque> buscarTodosEstoques() {
         return estoqueRepository.findAll();
     }
