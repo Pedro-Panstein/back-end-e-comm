@@ -13,8 +13,8 @@ public class CarrinhoControler {
     @Autowired
     CarrinhoService carrinhoService;
 
-//    @GetMapping("/listar")
-//    public void listarProdutosCarrinho() {
-//        carrinhoService.listarProdutosNoCarrinho();
-//    }
+    @GetMapping("/listar")
+    public void listarProdutosCarrinho() {
+        carrinhoService.listarTodosProdutosNoCarrinho();
+    }
 }
