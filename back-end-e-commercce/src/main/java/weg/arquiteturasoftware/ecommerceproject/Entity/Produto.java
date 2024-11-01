@@ -20,8 +20,8 @@ public class Produto {
     private double custo;
     private String descricao;
 
-    @ManyToOne
-    @JoinColumn(name = "estoque_id")
+    @ManyToOne(cascade = CascadeType.REMOVE) // Define a exclusão em cascata
+    @JoinColumn(name = "estoque_id", referencedColumnName = "id")
     private Estoque estoque;
 
 }
