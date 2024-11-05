@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import weg.arquiteturasoftware.ecommerceproject.Entity.Estoque;
+import weg.arquiteturasoftware.ecommerceproject.Entity.Produto;
 import weg.arquiteturasoftware.ecommerceproject.Service.EstoqueService;
 
 import java.util.List;
@@ -33,5 +34,10 @@ public class EstoqueController {
     @GetMapping("/listar-todos")
     public List<Estoque> listarTodosEstoques() {
         return estoqueService.buscarTodosEstoques();
+    }
+
+    @PutMapping("/editar/{id}")
+    public void editarEstoque(@PathVariable int id, @RequestBody Estoque novoEstoque) {
+        this.estoqueService.atualizarEstoque(id, novoEstoque);
     }
 }

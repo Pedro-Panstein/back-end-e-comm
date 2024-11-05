@@ -32,4 +32,9 @@ public class EstoqueService {
         return estoqueRepository.findAll();
     }
 
+    public void atualizarEstoque(int id, Estoque novoEstoque){
+        Estoque estoqueAntigo = buscarEstoque(id);
+        estoqueAntigo.setQuantidade(novoEstoque.getQuantidade());
+    }
+
 }
