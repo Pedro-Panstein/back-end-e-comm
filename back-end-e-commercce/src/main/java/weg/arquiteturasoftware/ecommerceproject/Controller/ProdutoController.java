@@ -16,6 +16,7 @@ public class ProdutoController {
     @Autowired
     ProdutoService produtoService;
 
+    //Caso dê erro no CORS, adicionar o @CrossOrigin e colocar o :3000
     @PostMapping("/adicionar")
     public Produto criarProduto(@RequestBody ProdutoRequest produtoRequest) {
         return this.produtoService.criarProduto(produtoRequest.getProduto(), produtoRequest.getEstoqueId());
