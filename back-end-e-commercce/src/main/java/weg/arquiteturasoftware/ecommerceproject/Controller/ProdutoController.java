@@ -28,13 +28,13 @@ public class ProdutoController {
     }
 
     @GetMapping("/listar")
-    public List<Produto> buscarProdutos(){
+    public List<Produto> buscarProdutos() {
         return produtoService.buscarTodosProdutos();
     }
 
     @DeleteMapping("/deletar/{id}")
-    public void deletarProduto(@PathVariable int id ) {
-        this.produtoService.deletarProduto( buscarProduto( id ) );
+    public void deletarProduto(@PathVariable int id) {
+        this.produtoService.deletarProduto(buscarProduto(id));
     }
 
     @PutMapping("/editar/{id}")

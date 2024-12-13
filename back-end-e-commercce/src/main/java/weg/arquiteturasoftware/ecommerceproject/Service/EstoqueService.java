@@ -35,6 +35,7 @@ public class EstoqueService {
     public void atualizarEstoque(int id, Estoque novoEstoque){
         Estoque estoqueAntigo = buscarEstoque(id);
         estoqueAntigo.setQuantidade(novoEstoque.getQuantidade());
+        estoqueRepository.save(novoEstoque);
     }
 
 }
